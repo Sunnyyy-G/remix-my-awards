@@ -1,0 +1,27 @@
+.g-header {
+  display: block;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 70px;
+  z-index: 100;
+  background: #fff;
+  box-shadow: 0 0 20px 0 rgba(28, 153, 84, .5);
+
+  .g-header-inner {
+    display: flex;
+    align-items: center;
+    padding: 7px 100px 8px 100px;
+  }
+  
+  .logo {
+    display: inline-block;
+  }
+
+  .logo-img {
+    display: inline-block;
+    width: auto;
+    height: 55px;
+  }
+}

@@ -1,0 +1,13 @@
+.g-footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px 0;
+  background: #1d2936;
+
+  .fonter-copyright {
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+  }
+}

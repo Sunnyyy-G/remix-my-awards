@@ -1,0 +1,22 @@
+@import '_mixin.css';
+@import '_default.css';
+@import '_header.css';
+@import '_footer.css';
+
+body {
+  display: block;
+  background: #fff;
+  min-width: 1280px;
+  height: auto;
+}
+
+.global {
+  position: relative;
+}
+
+.g-main {
+  display: flex;
+  width: 100%;
+  margin-top: 70px;
+  min-height: calc(100vh - 70px);
+}
