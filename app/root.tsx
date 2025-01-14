@@ -13,6 +13,7 @@ import {
   useNavigation,
   useSubmit,
 } from "@remix-run/react";
+import { cssBundleHref } from '@remix-run/css-bundle';
 import type { LinksFunction, LoaderFunctionArgs, } from '@remix-run/node';
 import { json, redirect } from '@remix-run/node';
 import { createEmptyContact, getContacts } from './data';
@@ -22,12 +23,22 @@ import Footer from '~/components/common/Footer';
 import globalStyle from '~/style/global.css';
 import appStylesHref from './app.css';
 
-export const links: LinksFunction = () => {
-  return [
-    { rel: 'stylesheet', href: globalStyle },
-    { rel: 'stylesheet', href: appStylesHref },
-  ]
-}
+// export const links: LinksFunction = () => {
+//   return [
+//     { rel: 'stylesheet', href: globalStyle },
+//     { rel: 'stylesheet', href: appStylesHref },
+//   ]
+// }
+
+export const links: LinksFunction = () => [
+  ...(cssBundleHref
+    ? [
+      { rel: 'stylesheet', href: cssBundleHref },
+      { rel: 'stylesheet', href: globalStyle },
+      { rel: 'stylesheet', href: appStylesHref },
+    ]
+    : []),
+];
 
 export const loader = async ({
   request,
