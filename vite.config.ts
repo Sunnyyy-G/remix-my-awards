@@ -1,6 +1,7 @@
 import { vitePlugin as remix } from "@remix-run/dev";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
+import postcssCustomProperties from 'postcss-custom-properties';
 import postcssImport from 'postcss-import';
 import postcssMixins from  'postcss-mixins';
 import postcssNested from 'postcss-nested';
@@ -27,7 +28,9 @@ export default defineConfig({
         // require('postcss-extend-rule'), 
         postcssExtendRule,
         // 根据目标浏览器自动添加 CSS 前缀，确保兼容性
-        autoprefixer
+        autoprefixer,
+        // 支持 CSS 自定义样式属性
+        postcssCustomProperties
       ],
     }
   }

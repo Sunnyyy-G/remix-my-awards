@@ -19,4 +19,41 @@ body {
   width: 100%;
   margin-top: 70px;
   min-height: calc(100vh - 70px);
+  background: #eee;
+}
+
+.g-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  min-height: 100%;
+}
+
+.g-h2 {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  width: 100%;
+  padding: 12px 0;
+  color: var(--theme-blue);
+  font-size: 24px;
+  font-weight: bold;
+  border-bottom: 1px solid var(--theme-green);
+
+  .icon-certificate {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    margin-right: 5px;
+    background: url('../images/common/icon_certificates.svg') no-repeat center/100% 100%;
+  }
+
+  .g-h2-name {
+    line-height: 36px;
+  }
+
+  .g-h2-name-cn {
+    font-size: 14px;
+    margin-left: 10px;
+  }
 }

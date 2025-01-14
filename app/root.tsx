@@ -1,4 +1,6 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
+import { ClientOnly } from 'remix-utils/client-only';
+import Watermark from '~/components/common/Watermark';
 import {
   Form,
   NavLink,
@@ -41,7 +43,7 @@ export const action = async () => {
   return redirect(`/contacts/${contact.id}/edit`);
 };
 
-export default function App() {
+const App: React.FC = () => {
   const { contacts, q } = useLoaderData<typeof loader>();
   const navigation = useNavigation();
   const submit = useSubmit();
@@ -70,81 +72,91 @@ export default function App() {
         <div className='global'>
           <Header />
           <div className='g-main'>
-            <div id="sidebar">
-              <h1>Awards</h1>
-              <div>
-                <Form
-                  onChange={(event) => {
-                    const isFirstSearch = q === null;
-                    submit(event.currentTarget, {
-                      replace: !isFirstSearch,
-                    });
-                  }}
-                  id="search-form"
-                  role="search"
-                >
-                  <input
-                    id="q"
-                    className={searching ? "loading" : ""}
-                    defaultValue={q || ""}
-                    aria-label="Search contacts"
-                    placeholder="Search"
-                    type="search"
-                    name="q"
-                  />
-                  <div id="search-spinner" aria-hidden hidden={!searching} />
-                </Form>
-                <Form method="post">
-                  <button type="submit">New</button>
-                </Form>
+              {/*
+              <div id="sidebar">
+                <h1>Awards</h1>
+                <div>
+                  <Form
+                    onChange={(event) => {
+                      const isFirstSearch = q === null;
+                      submit(event.currentTarget, {
+                        replace: !isFirstSearch,
+                      });
+                    }}
+                    id="search-form"
+                    role="search"
+                  >
+                    <input
+                      id="q"
+                      className={searching ? "loading" : ""}
+                      defaultValue={q || ""}
+                      aria-label="Search contacts"
+                      placeholder="Search"
+                      type="search"
+                      name="q"
+                    />
+                    <div id="search-spinner" aria-hidden hidden={!searching} />
+                  </Form>
+                  <Form method="post">
+                    <button type="submit">New</button>
+                  </Form>
+                </div>
+                <nav>
+                  {contacts.length ? (
+                    <ul>
+                      {contacts.map((contact) => (
+                        <li key={contact.id}>
+                          <NavLink
+                            className={({ isActive, isPending }) =>
+                              isActive
+                                ? "active"
+                                : isPending
+                                ? "pending"
+                                : ""
+                            }
+                            to={`contacts/${contact.id}`}
+                          >
+                            {contact.first || contact.last ? (
+                              <>
+                                {contact.first} {contact.last}
+                              </>
+                            ) : (
+                              <i>No Name</i>
+                            )}{" "}
+                            {contact.favorite ? (
+                              <span>★</span>
+                            ) : null}
+                          </NavLink>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p>
+                      <i>No contacts</i>
+                    </p>
+                  )}
+                </nav>
               </div>
-              <nav>
-                {contacts.length ? (
-                  <ul>
-                    {contacts.map((contact) => (
-                      <li key={contact.id}>
-                        <NavLink
-                          className={({ isActive, isPending }) =>
-                            isActive
-                              ? "active"
-                              : isPending
-                              ? "pending"
-                              : ""
-                          }
-                          to={`contacts/${contact.id}`}
-                        >
-                          {contact.first || contact.last ? (
-                            <>
-                              {contact.first} {contact.last}
-                            </>
-                          ) : (
-                            <i>No Name</i>
-                          )}{" "}
-                          {contact.favorite ? (
-                            <span>★</span>
-                          ) : null}
-                        </NavLink>
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p>
-                    <i>No contacts</i>
-                  </p>
-                )}
-              </nav>
+              */}
+              <div
+                className={
+                  navigation.state === "loading" && !searching
+                    ? "loading"
+                    : ""
+                }
+                id='detail'
+              >
+                <Outlet />
+                {/* <ClientOnly>{
+                    () => <>
+                      <Watermark>
+                        <Outlet />
+                      </Watermark>
+                    </>
+                  }
+                </ClientOnly> */}
+              </div>
             </div>
-            <div
-              className={
-                navigation.state === "loading" && !searching
-                  ? "loading"
-                  : ""
-              }
-              id='detail'
-            >
-              <Outlet />
-            </div>
-          </div>
           <Footer />
         </div>
         <ScrollRestoration />
@@ -153,3 +165,5 @@ export default function App() {
     </html>
   );
 }
+
+export default App;

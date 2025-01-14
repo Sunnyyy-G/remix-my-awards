@@ -1,5 +1,8 @@
 const config = {
   plugins: {
+    // 自定义颜色变量
+    'postcss-custom-properties':{},
+
     // 把 import 的内容转换为 inline
     // @see https://github.com/postcss/postcss-import#postcss-import
     'postcss-import': {},
