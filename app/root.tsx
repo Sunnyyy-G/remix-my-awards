@@ -22,6 +22,7 @@ import Header from '~/components/common/Header';
 import Footer from '~/components/common/Footer';
 import globalStyle from '~/style/global.css';
 import appStylesHref from './app.css';
+// import 'antd/dist/antd.css';
 
 // export const links: LinksFunction = () => {
 //   return [
