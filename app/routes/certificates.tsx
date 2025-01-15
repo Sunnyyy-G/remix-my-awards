@@ -43,7 +43,7 @@ const Certificates:React.FC = () => {
       <span className='g-h2-name-cn'>我的证书</span>
     </h2>
     <div className='certificate-list'>
-      <Card title='编程综合能力认证'>
+      <Card title='前端开发能力认证'>
         {
           certificatesList.map((item: Certificate) => {
            return (
@@ -53,7 +53,7 @@ const Certificates:React.FC = () => {
                 <a className='certificate-more' href={item.courseLink}>more</a>
               </div>
               <div className='certificate-main'>
-                <div className='certificate-img-frame'>
+                <div className={`certificate-img-frame certificate-img-frame--${item.type}`}>
                 <Image
                   width={'100%'}
                   src={item.imgUrl}
