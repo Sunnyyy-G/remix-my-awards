@@ -20,8 +20,8 @@ import { createEmptyContact, getContacts } from './data';
 
 import Header from '~/components/common/Header';
 import Footer from '~/components/common/Footer';
-import globalStyle from '~/style/global.css';
-import appStylesHref from './app.css';
+import '~/style/global.css';
+import '~/style/app.css';
 // import 'antd/dist/antd.css';
 
 // export const links: LinksFunction = () => {
@@ -34,9 +34,7 @@ import appStylesHref from './app.css';
 export const links: LinksFunction = () => [
   ...(cssBundleHref
     ? [
-      { rel: 'stylesheet', href: cssBundleHref },
-      { rel: 'stylesheet', href: globalStyle },
-      { rel: 'stylesheet', href: appStylesHref },
+      { rel: 'stylesheet', href: cssBundleHref }
     ]
     : []),
 ];
@@ -83,7 +81,8 @@ const App: React.FC = () => {
       <body>
         <div className='global'>
           <Header />
-          <div className='g-main'>
+          <Watermark>
+            <div className='g-main'>
               {/*
               <div id="sidebar">
                 <h1>Awards</h1>
@@ -169,6 +168,7 @@ const App: React.FC = () => {
                 </ClientOnly> */}
               </div>
             </div>
+          </Watermark>
           <Footer />
         </div>
         <ScrollRestoration />

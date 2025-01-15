@@ -7,7 +7,7 @@ interface WatermarkProps {
 
 const WatermarkComponent: React.FC<WatermarkProps> = ({ children }) => {
     return (
-        <Watermark content="LIGEN">
+        <Watermark content={['LIGEN', 'Front-end development']}>
             {children}
         </Watermark>
     );

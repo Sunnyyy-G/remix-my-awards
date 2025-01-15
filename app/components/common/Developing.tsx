@@ -1,15 +1,16 @@
 import { FC } from 'react';
 import type { LinksFunction } from '@remix-run/node';
-import indexStyle from '~/style/_developing.css';
+// import indexStyle from '~/style/_developing.css';
+import '~/style/_developing.css';
 
-export const links: LinksFunction = () => {
-  return [
-    {
-      rel: 'stylesheet',
-      href: indexStyle
-    }
-  ]
-}
+// export const links: LinksFunction = () => {
+//   return [
+//     {
+//       rel: 'stylesheet',
+//       href: indexStyle
+//     }
+//   ]
+// }
 
 const Developing: FC = () => {
   return (

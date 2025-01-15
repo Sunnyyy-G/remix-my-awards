@@ -1,15 +1,16 @@
 import React from 'react';
-import type { LinksFunction } from '@remix-run/node';
-import indexStyle from '~/style/index.css';
+// import type { LinksFunction } from '@remix-run/node';
+import '~/style/index.css';
+// import indexStyle from '~/style/index.css';
 
-export const links: LinksFunction = () => {
-  return [
-    {
-      rel: 'stylesheet',
-      href: indexStyle
-    }
-  ]
-}
+// export const links: LinksFunction = () => {
+//   return [
+//     {
+//       rel: 'stylesheet',
+//       href: indexStyle
+//     }
+//   ]
+// }
 
 export default function Index() {
   return (

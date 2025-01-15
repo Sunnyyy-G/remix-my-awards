@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@ant-design/icons':
+    specifier: ^5.5.2
+    version: 5.5.2(react-dom@18.3.1)(react@18.3.1)
   '@remix-run/css-bundle':
     specifier: ^2.15.2
     version: 2.15.2
@@ -17,6 +20,9 @@ dependencies:
   '@remix-run/serve':
     specifier: ^2.15.2
     version: 2.15.2(typescript@5.7.3)
+  '@types/antd':
+    specifier: ^1.0.4
+    version: 1.0.4(react-dom@18.3.1)(react@18.3.1)
   antd:
     specifier: ^5.23.1
     version: 5.23.1(react-dom@18.3.1)(react@18.3.1)
@@ -1675,6 +1681,19 @@ packages:
     dependencies:
       '@types/estree': 1.0.6
     dev: true
+
+  /@types/antd@1.0.4(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-gp4PGQckP1kNjj2H6juhjKIVwkpXwCIyIvOlwp2DC6geuhVpDHEEB5gwH4hJabVgBAFtrjBPJ58VIRV9VV9W2g==}
+    deprecated: This is a stub types definition. antd provides its own type definitions, so you do not need this installed.
+    dependencies:
+      antd: 5.23.1(react-dom@18.3.1)(react@18.3.1)
+    transitivePeerDependencies:
+      - date-fns
+      - luxon
+      - moment
+      - react
+      - react-dom
+    dev: false
 
   /@types/autoprefixer@10.2.4(postcss@8.5.0):
     resolution: {integrity: sha512-SMNRug0gJ4m7JeBBgBWEs7p8t66rYywXKFOxpqKlMbMkTR0AyAQV3t46esP94vB8V5cvsenQEPVGMXSqHSihKw==}
