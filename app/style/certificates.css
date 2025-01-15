@@ -55,6 +55,7 @@
 
   .certificate-main {
     display: flex;
+    flex: 1;
     background: #fff;
   }
 
@@ -74,6 +75,12 @@
   .certificate-info-row {
     display: block;
     line-height: 32px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .certificate-info-content {
+    padding-left: 15px;
   }
 
   .ant-image {
