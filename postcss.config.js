@@ -20,6 +20,8 @@ const config = {
     'postcss-extend-rule': {},
 
     'autoprefixer': {},
+
+    '@tailwindcss/postcss': {},
   },
 };
 export default config;

@@ -1,0 +1,11 @@
+{
+  "plugins": [
+    "prettier-plugin-svelte",
+    "prettier-plugin-organize-imports",
+    "prettier-plugin-tailwindcss"
+  ],
+  "tailwindAttributes": ["myClassList"],
+  "tailwindFunctions": ["clsx","tw"],
+  "tailwindConfig": "./tailwind.config.js",
+  "tailwindStylesheet": "./app/style/app.css"
+}

@@ -35,6 +35,7 @@ interface Certificate {
 
 const Certificates:React.FC = () => {
   const { Meta } = Card;
+  console.log(certificatesList);
 
   return <div className='g-container p-certificates'>
     <h2 className='g-h2'>

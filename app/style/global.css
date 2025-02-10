@@ -1,7 +1,7 @@
-@import '_mixin.css';
-@import '_default.css';
-@import '_header.css';
-@import '_footer.css';
+@import './_mixin.css';
+@import './_default.css';
+@import './_header.css';
+@import './_footer.css';
 
 body {
   display: block;

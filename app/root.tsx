@@ -22,6 +22,7 @@ import Header from '~/components/common/Header';
 import Footer from '~/components/common/Footer';
 import '~/style/global.css';
 import '~/style/app.css';
+import '~/tailwind.css';
 // import 'antd/dist/antd.css';
 
 // export const links: LinksFunction = () => {
